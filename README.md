@@ -21,5 +21,17 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+## To Do
+
+  * sigin/up edit/signout into partial
+  * completed meditation into partial
+  * add comments column
+  * ask if comment added at end of session
+  * add completed column
+  * show only completed sessions on root
+  * ajax signin/register box
+  * show total meditation time
+  * style everything
+  * displays sessions as graph or table
+
 
