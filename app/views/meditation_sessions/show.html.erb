@@ -1,0 +1,20 @@
+<div id = "session-<%= @meditation_session.id %>">
+    <h3 id="date" class="session_date"><%= @meditation_session.created_at.strftime("%b %d, %Y") %></h3>
+    <h1 id="duration" class="session_duration"><%= @meditation_session.time_spent %></h1>
+    <%= link_to "delete session", @meditation_session,  method: :delete,
+                                                        data: { confirm: "You sure?" } %>
+    <%= link_to "Home", root_path, class: "return_link" %>
+</div>
+
+<input id="pause" type="button" value="pause"/>
+<input id="start" type="button" value="start"/>
+<div id="complete" style="display: none;">
+    <p>You have completed:</p>
+    <%= form_for @meditation_session, url: meditation_session_path(@meditation_session.id), method: :patch do |f| %>
+
+        <%= f.label :time_spent,  "No meditation" %>
+        <%= f.text_field :time_spent, id: "time_completed", type: "hidden" %>
+        <%= f.submit "Submit" %>
+
+    <% end %>
+</div>

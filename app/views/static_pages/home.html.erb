@@ -1,0 +1,31 @@
+<h1>Meditation</h1>
+
+<ul class="hmenu">
+  <% if @user %>
+  <li>
+  <%= link_to('Edit registration', edit_user_registration_path) %>
+  </li>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+  <li>
+  <%= link_to('New Meditation Session', new_meditation_session_path)  %>  
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Register', new_user_registration_path)  %>
+  </li>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+</ul>
+
+<% if @user %>
+    <% current_user.meditation_session.each do |session| %>
+        <h3><%= session.created_at.strftime("%b %d, %Y") %></h3>
+        <h3><%= session.time_spent %></h3>
+    <% end %>
+
+    <%= link_to 'New Meditation Session', new_meditation_session_path, id: "new_session", remote: true %> 
+<% end %>

@@ -1,0 +1,7 @@
+<%= form_for @meditation_session do |f| %>
+
+    <%= f.label :time_spent, "Duration:" %>
+    <%= f.text_field :time_spent, placeholder: "Meditation time"%>
+    <%= f.submit "Begin" %>
+
+<% end %>
