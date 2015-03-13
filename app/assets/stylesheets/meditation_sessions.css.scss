@@ -1,3 +1,32 @@
 // Place all the styles related to the meditation_sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+}
+
+input[type=radio] {
+  display: none;
+  &:checked + .meditation-duration {
+    background-color: red;
+    color: white;
+  }
+}
+
+.meditation-duration { 
+    cursor: pointer; 
+    height: 100px;
+    width: 150px;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    line-height: 85px;
+    display: inline-block;
+    margin: 0 5px;
+    transition: all 0.2s ease;
+    &:hover {
+       background-color: cornflowerblue; 
+       box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.85);
+       color: white;
+    }
+}

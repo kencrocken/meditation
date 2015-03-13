@@ -27,9 +27,7 @@ class MeditationSessionsController < ApplicationController
             end
         else
             flash[:notice] = "Sorry, seems there was an error."
-            respond_to do |format|
-                format.html { redirect_to root_path }
-            end
+            redirect_to root_path 
         end
     end
 
@@ -38,7 +36,7 @@ class MeditationSessionsController < ApplicationController
 
     def update
         @meditation_session.update!(session_params)
-        flash[:notice] = "Meditation session completed."
+        flash[:notice] = "#{@meditation_session.time_spent} minutes completed."
         redirect_to root_path
     end
     def destroy

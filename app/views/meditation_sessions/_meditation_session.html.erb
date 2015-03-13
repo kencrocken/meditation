@@ -1,6 +1,7 @@
 <li id = "session-<%= meditation_session.id %>">
     <span class="session_date"><%= meditation_session.created_at.strftime("%b %d, %Y") %></span>
     <span class="session_duration"><%= meditation_session.time_spent %></span>
+    <span class="session_comment"><%= meditation_session.comment %></span>
     <%= link_to "delete session", meditation_session,  method: :delete,
                                                         data: { confirm: "You sure?" } %>
 </li>

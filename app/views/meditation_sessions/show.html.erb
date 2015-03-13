@@ -9,12 +9,5 @@
 <input id="pause" type="button" value="pause"/>
 <input id="start" type="button" value="start"/>
 <div id="complete" style="display: none;">
-    <p>You have completed:</p>
-    <%= form_for @meditation_session, url: meditation_session_path(@meditation_session.id), method: :patch do |f| %>
-
-        <%= f.label :time_spent,  "No meditation" %>
-        <%= f.text_field :time_spent, id: "time_completed", type: "hidden" %>
-        <%= f.submit "Submit" %>
-
-    <% end %>
+    <%= render "meditation_complete" %>
 </div>

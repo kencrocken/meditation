@@ -6,7 +6,6 @@ timer = null
 interval = 1000
 duration = parseInt($('#duration').text())
 value = duration
-timeCompleted = duration - value
 
 $('#start').click ->
     $('#complete').css('display','none')
@@ -18,7 +17,7 @@ $('#start').click ->
             $('#duration').text --value
             timeCompleted = duration - value
             $('#complete label').text(timeCompleted + " Minutes")
-            $('#time_completed').attr("value",timeCompleted)
+            $('#time_spent').attr("value",timeCompleted)
             return
         else
             clearInterval timer
