@@ -3,17 +3,15 @@ Rails.application.routes.draw do
 
   resources :meditation_sessions
 
-  get 'static_pages/home'
-
   get 'static_pages/about'
-
   get 'static_pages/contact'
-
+  
+  root 'meditation_sessions#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'meditation_sessions#index'
+  # root 'meditation_sessions#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
