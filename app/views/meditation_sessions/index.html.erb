@@ -3,8 +3,20 @@
 <%= render "registration" %>
 
 <% if @user %>
-  <ul id="sessions">
+
+  <table id="sessions">
+    <thead>
+      <th>Date</th>
+      <th>Minutes</th>
+      <th>Comments</th>
+      <th></th>
+    </thead>
+    <tbody>
     <%= render @meditation_session %>
-  </ul>
-  <%= link_to 'New Meditation Session', new_meditation_session_path, id: "new_session", remote: true %> 
+    <tbody>
+  </table>
+
+  <%= button_to 'Meditate Now', new_meditation_session_path, method: :get, id: "new_session" %>
+
+
 <% end %>

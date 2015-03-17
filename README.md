@@ -9,6 +9,10 @@ Things you may want to cover:
 
 * System dependencies
 
+  Devise  - see, Gemfile
+  
+  progressbars.js - see, vendor/assets/javascripts
+
 * Configuration
 
 * Database creation
@@ -23,9 +27,6 @@ Things you may want to cover:
 
 ## To Do
 
-  * sigin/up edit/signout into partial
-  * completed meditation into partial
-  * add comments column
   * ask if comment added at end of session
   * add completed column
   * show only completed sessions on root

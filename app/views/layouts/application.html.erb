@@ -3,23 +3,37 @@
 <head>
   <title>Meditation</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <style type="text/css">
-    ul.hmenu {
-      list-style: none; 
-      margin: 0 0 2em;
-      padding: 0;
-    }
-
-    ul.hmenu li {
-      display: inline;  
-    }
-  </style>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
+<% unless success.nil? %>
+    <div class="flash-success">
+      <span><%= success %></span>
+    </div>
+<% end %>
+
+<% unless error.nil? %>
+    <div class="flash-error">
+      <span><%= error %></span>
+    </div>
+<% end %>
+
+<% unless notice.nil? %>
+    <div class="flash-notice">
+      <span><%= notice %></span>
+    </div>
+<% end %>
+
+<% unless alert.nil? %>
+    <div class="flash-alert">
+      <span><%= alert %></span>
+    </div>
+<% end %>
+
 <%= yield %>
+
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= yield :page_scripts %>
 </body>
 </html>

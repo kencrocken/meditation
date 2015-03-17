@@ -1,6 +1,9 @@
-<li id = "session-<%= meditation_session.id %>">
-    <span class="session_date"><%= meditation_session.created_at.strftime("%b %d, %Y") %></span>
-    <span class="session_duration"><%= meditation_session.time_spent %></span>
-    <%= link_to "delete session", meditation_session,  method: :delete,
+<tr id = "session-<%= meditation_session.id %>">
+    <td class="session_date"><%= meditation_session.created_at.strftime("%b %d, %Y") %></td>
+    <td class="session_duration"><%= meditation_session.time_spent %></td>
+    <td class="session_comment"><%= meditation_session.comment %></td>
+    <td><%= link_to "View Session", meditation_session_path(meditation_session.id) %>
+        <%= link_to icon('times-circle-o close'), meditation_session,  method: :delete,
                                                         data: { confirm: "You sure?" } %>
-</li>
+                                                    </td>
+</tr>

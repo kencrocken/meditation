@@ -1,3 +1,61 @@
 // Place all the styles related to the meditation_sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.hmenu {
+  list-style: none; 
+  margin: 0 0 2em;
+  padding: 0;
+  li {
+    display: inline; 
+  }
+}
+    
+table {
+    margin-bottom: 2em;
+}
+
+input[type=radio] {
+  display: none;
+  &:checked + .meditation-duration {
+    background-color: red;
+    color: white;
+  }
+}
+
+.meditation-duration { 
+    cursor: pointer; 
+    height: 150px;
+    width: 150px;
+    border: 1px solid #e4e4e4;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 142px;
+    display: inline-block;
+    margin: 0 5px;
+    transition: all 0.2s ease;
+    &:hover {
+       background-color: cornflowerblue; 
+       box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.85);
+       color: white;
+    }
+}
+
+#duration{
+    margin: 25px 12px;
+    height: 200px;
+    width: 200px;
+    position: relative;
+
+    #minutes {
+        font-size: 2em;
+        font-weight: 100;
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}

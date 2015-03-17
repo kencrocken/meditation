@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308044934) do
+ActiveRecord::Schema.define(version: 20150310004958) do
 
   create_table "meditation_sessions", force: true do |t|
     t.integer  "time_spent"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "comment"
   end
 
   add_index "meditation_sessions", ["user_id"], name: "index_meditation_sessions_on_user_id"
