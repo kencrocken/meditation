@@ -9,6 +9,9 @@ Things you may want to cover:
 
 * System dependencies
 
+  Devise  - see, Gemfile
+  progressbars.js - see, vendor/assets/javascripts
+
 * Configuration
 
 * Database creation

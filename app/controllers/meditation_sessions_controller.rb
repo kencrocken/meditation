@@ -20,13 +20,13 @@ class MeditationSessionsController < ApplicationController
     def create
         @meditation_session = current_user.meditation_session.new(session_params)
         if @meditation_session.save
-            flash[:notice] = "Meditation session created."
+            flash[:success] = "#{@meditation_session.time_spent} minutes completed."
             respond_to do |format|
-                format.html { redirect_to meditation_session_path(@meditation_session.id) }
+                format.html { redirect_to root_path }
                 # format.js
             end
         else
-            flash[:notice] = "Sorry, seems there was an error."
+            flash[:error] = "Sorry, seems there was an error."
             redirect_to root_path 
         end
     end
@@ -36,12 +36,12 @@ class MeditationSessionsController < ApplicationController
 
     def update
         @meditation_session.update!(session_params)
-        flash[:notice] = "#{@meditation_session.time_spent} minutes completed."
+        flash[:success] = "#{@meditation_session.time_spent} minutes completed."
         redirect_to root_path
     end
     def destroy
         @meditation_session.destroy
-        flash[:notice] = "Project deleted."
+        flash[:alert] = "Session deleted."
         redirect_to root_path
     end
 

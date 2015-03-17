@@ -1,13 +1,6 @@
+<%= link_to "Home",root_path %>
 <div id = "session-<%= @meditation_session.id %>">
     <h3 id="date" class="session_date"><%= @meditation_session.created_at.strftime("%b %d, %Y") %></h3>
     <h1 id="duration" class="session_duration"><%= @meditation_session.time_spent %></h1>
-    <%= link_to "delete session", @meditation_session,  method: :delete,
-                                                        data: { confirm: "You sure?" } %>
-    <%= link_to "Home", root_path, class: "return_link" %>
-</div>
-
-<input id="pause" type="button" value="pause"/>
-<input id="start" type="button" value="start"/>
-<div id="complete" style="display: none;">
-    <%= render "meditation_complete" %>
+    <p id="comments" class="session_comments"><%= @meditation_session.comment %></p>
 </div>

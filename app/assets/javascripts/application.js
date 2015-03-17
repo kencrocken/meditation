@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require progressbar
 //= require turbolinks
 //= require_tree .

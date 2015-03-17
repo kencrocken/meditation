@@ -2,33 +2,68 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+# timer = null
+# interval = 1000
+# duration = parseInt($('#duration').text())
+# value = 0
+
+# $('#start').click ->
+#     $('#complete').css('display','none')
+#     if timer != null
+#       return
+#     timer = setInterval((->
+        
+#         # if value > 0
+#             $('#duration').text ++value
+#             timeCompleted = value
+            # $('#complete label').text(timeCompleted + " Minutes")
+            # $('#time_spent').attr("value",timeCompleted)
+#             return
+#         # else
+#         #     clearInterval timer
+#         #     $('#duration').text "complete"
+#         #     $('#complete').css('display','block')
+            
+#     ), interval)
+#     return
+# $('#pause').click ->
+#     clearInterval timer
+#     timer = null
+#     $('#complete').css('display','block')
+# return
+
 timer = null
 interval = 1000
-duration = parseInt($('#duration').text())
-value = duration
-
+second = 0
+minute = 0
+element = document.getElementById('duration')
+element.innerHTML = '<header id="minutes"></header>'
+textElement = document.getElementById('minutes')
+seconds = new (ProgressBar.Circle)(element,
+    duration: 200
+    strokeWidth: 2
+    trailWidth: 1
+    color: '#FCB03C'
+    trailColor: '#ddd')
 $('#start').click ->
     $('#complete').css('display','none')
     if timer != null
-      return
-    timer = setInterval((->
-        
-        if value > 0
-            $('#duration').text --value
-            timeCompleted = duration - value
-            $('#complete label').text(timeCompleted + " Minutes")
-            $('#time_spent').attr("value",timeCompleted)
+        return
+    timer = setInterval (->
+        ++second
+        seconds.animate second / 60, ->
+            if second > 59
+                ++minute
+                second = 0
+                $('#complete label').text(minute + " Minutes")
+                $('#time_spent').attr("value",minute)
+            textElement.innerHTML = minute
             return
-        else
-            clearInterval timer
-            $('#duration').text "complete"
-            $('#complete').css('display','block')
-            
-    ), interval)
+        return
+    ), interval
     return
 $('#pause').click ->
     clearInterval timer
     timer = null
     $('#complete').css('display','block')
 return
-
