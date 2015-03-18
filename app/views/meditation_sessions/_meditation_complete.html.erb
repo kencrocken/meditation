@@ -2,8 +2,10 @@
 
 <%= form_for @meditation_session do |f| %>
 
-    <%= f.label :time_spent,  "No meditation" %>
+    <%= f.label :time_spent,  "No meditation", id: "time_duration" %>
     <%= f.text_field :time_spent, id: "time_spent", type: "hidden" %>
+    <%= f.label :comment, "Have any comments?", id: "session_comments" %>
+    <%= f.text_area :comment, id: "comments", cols: 10, rows: 4 %>
     <%= f.submit "Submit" %>
 
 <% end %>

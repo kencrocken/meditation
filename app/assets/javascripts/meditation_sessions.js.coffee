@@ -55,7 +55,7 @@ $('#start').click ->
             if second > 59
                 ++minute
                 second = 0
-                $('#complete label').text(minute + " Minutes")
+                $('#complete #time_duration').text(minute + " Minutes")
                 $('#time_spent').attr("value",minute)
             textElement.innerHTML = minute
             return
@@ -65,5 +65,9 @@ $('#start').click ->
 $('#pause').click ->
     clearInterval timer
     timer = null
+    duration = $('#time_spent').attr('value');
+    $('#session_comments, #comments').hide()
+    if duration >= 1
+        $('#session_comments, #comments').show()
     $('#complete').css('display','block')
 return
