@@ -9,3 +9,14 @@ input[type="button"] {
   vertical-align: middle;
   white-space: nowrap;
 }
+
+.registration-button {
+	@extend %button;
+	background: transparent;
+	border: 1px solid #aaa;
+	color: black;
+	font-weight: 300;
+	&:hover {
+		
+	}
+}

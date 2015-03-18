@@ -1,6 +1,6 @@
 <%= link_to "Home",root_path %>
 <div id = "session-<%= @meditation_session.id %>">
     <h3 id="date" class="session_date"><%= @meditation_session.created_at.strftime("%b %d, %Y") %></h3>
-    <h1 id="duration" class="session_duration"><%= @meditation_session.time_spent %></h1>
+    <h1 id="time_spent" class="session_duration"><%= pluralize(@meditation_session.time_spent, 'Minute') %></h1>
     <p id="comments" class="session_comments"><%= @meditation_session.comment %></p>
 </div>

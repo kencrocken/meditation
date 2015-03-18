@@ -1,17 +1,17 @@
 <ul class="hmenu">
   <% if @user %>
   <li>
-    <%= link_to('Edit registration', edit_user_registration_path) %>
+    <%= button_to 'Edit registration', edit_user_registration_path, method: :get %>
   </li>
   <li>
-    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete %>        
   </li>
 <% else %>
   <li>
-    <%= link_to('Register', new_user_registration_path)  %>
+    <%= link_to 'Register', new_user_registration_path, class: 'registration-button' %>
   </li>
   <li>
-    <%= link_to('Login', new_user_session_path)  %>  
+    <%= link_to 'Login', new_user_session_path, class: 'registration-button'  %>  
   </li>
 <% end %>
 </ul>
