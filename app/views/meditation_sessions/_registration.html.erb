@@ -11,7 +11,9 @@
     <%= link_to 'Register', new_user_registration_path, class: 'registration-button' %>
   </li>
   <li>
-    <%= link_to 'Login', new_user_session_path, class: 'registration-button'  %>  
+    <%= link_to 'Login', new_user_session_path, class: 'registration-button', remote: true  %>  
   </li>
 <% end %>
 </ul>
+
+<%= render "new_user_session" %>

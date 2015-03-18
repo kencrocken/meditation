@@ -11,7 +11,6 @@ class MeditationSessionsController < ApplicationController
     end
 
     def show
-        # @meditation_session = current_user.meditation_session.find params[:id]
     end
 
     def new
