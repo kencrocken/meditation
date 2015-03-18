@@ -27,9 +27,6 @@ Things you may want to cover:
 
 ## To Do
 
-  * ask if comment added at end of session
-  * add completed column
-  * show only completed sessions on root
   * ajax signin/register box
   * show total meditation time
   * style everything
