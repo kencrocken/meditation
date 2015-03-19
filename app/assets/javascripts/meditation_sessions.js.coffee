@@ -2,16 +2,31 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+### SHOW HIDE REGISTRATION BOXES ###
+$('#log-in-box, #sign-up-box').css('display','none')
+$('#log-in-button').on 'click', (e) ->
+  e.preventDefault()
+  $('#sign-up-box').css('display','none')
+  $('#log-in-box').css('display','block')
+  return
+
+$('#sign-up-button').on 'click', (e) ->
+  e.preventDefault()
+  $('#log-in-box').css('display','none')
+  $('#sign-up-box').css('display','block')
+  return
+
+### MEDITATION TIMER ###
 timer = null
 interval = 1000
 second = 0
 minute = 0
-element = $('#duration')
+element = document.getElementById('duration')
 element.innerHTML = '<header id="minutes"></header>'
-textElement = $('#minutes')
+textElement = document.getElementById('minutes')
 meditationDuration = new (ProgressBar.Circle)(element,
     duration: 200
-    strokeWidth: 2
+    strokeWidth: 3
     trailWidth: 1
     color: '#FCB03C'
     trailColor: '#ddd')

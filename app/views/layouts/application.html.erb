@@ -6,6 +6,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if @user %>
+  <%= render "layouts/header" %>
+<% end %>
 
 <% unless success.nil? %>
     <div class="flash-success">

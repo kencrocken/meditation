@@ -16,7 +16,7 @@ input[type="button"] {
 	border: 1px solid #aaa;
 	color: black;
 	font-weight: 300;
-	&:hover {
-		
+	&:active {
+		background: #aaa;
 	}
 }

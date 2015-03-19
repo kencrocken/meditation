@@ -1,7 +1,7 @@
 <div id = "new-session">
     <%= link_to "Home", root_path, data: { confirm: "This will delete your current session. Are you sure?" } %>
-    <h3 id="date" class="session_date"><%= Time.now.to_formatted_s(:concise) %></h3>
-    <h1 id="duration" class="session_duration">0</h1>
+    <h4 id="date" class="session_date"><%= Time.now.to_formatted_s(:concise) %></h4>
+    <div id="duration" class="session_duration">0</div>
 </div>
 
 <input id="pause" type="button" value="pause"/>
@@ -10,8 +10,3 @@
 <div id="complete" style="display: none;">
     <%= render "meditation_complete" %>
 </div>
-
-<div id="example-clock-container"></div>
-
-<%= content_for :page_scripts do %>
-<% end %>

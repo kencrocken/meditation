@@ -1,22 +1,24 @@
-<h1 class="app-title">Meditation</h1>
+<main>
+  <% if @user %>
 
-<%= render "registration" %>
+    <table id="sessions">
+      <thead>
+        <th>Date</th>
+        <th>Minutes</th>
+        <th>Comments</th>
+        <th></th>
+      </thead>
+      <tbody>
+      <%= render @meditation_session %>
+      <tbody>
+    </table>
 
-<% if @user %>
+    <%= button_to 'Meditate Now', new_meditation_session_path, method: :get, id: "new_session" %>
 
-  <table id="sessions">
-    <thead>
-      <th>Date</th>
-      <th>Minutes</th>
-      <th>Comments</th>
-      <th></th>
-    </thead>
-    <tbody>
-    <%= render @meditation_session %>
-    <tbody>
-  </table>
+  <% else %>
 
-  <%= button_to 'Meditate Now', new_meditation_session_path, method: :get, id: "new_session" %>
+  <h1 class="app-title">Meditation</h1>
+  <%= render "registration" %>
 
-
-<% end %>
+  <% end %>
+</main>

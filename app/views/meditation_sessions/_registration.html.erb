@@ -1,19 +1,11 @@
 <ul class="hmenu">
-  <% if @user %>
   <li>
-    <%= button_to 'Edit registration', edit_user_registration_path, method: :get %>
+    <%= link_to 'Register', new_user_registration_path, class: 'registration-button', id: 'sign-up-button' %>
   </li>
   <li>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete %>        
+    <%= link_to 'Login', new_user_session_path, class: 'registration-button', id: 'log-in-button' %>  
   </li>
-<% else %>
-  <li>
-    <%= link_to 'Register', new_user_registration_path, class: 'registration-button' %>
-  </li>
-  <li>
-    <%= link_to 'Login', new_user_session_path, class: 'registration-button', remote: true  %>  
-  </li>
-<% end %>
 </ul>
 
 <%= render "new_user_session" %>
+<%= render "new_user_signup" %>

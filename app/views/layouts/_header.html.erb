@@ -1,0 +1,14 @@
+<nav>
+    <h3><%= link_to "Meditation", root_path %></h3>
+    <ul class="header-nav">
+        <li>
+            <%= link_to icon('user','Edit Profile', class: 'strong'), edit_user_registration_path, method: :get, class: "registration-button" %>
+        </li>
+        <li>
+            <%= link_to icon('sign-out','Log Out', class: 'strong'), destroy_user_session_path, method: :delete, class: "registration-button" %>        
+        </li>
+    </ul>
+</nav>
+
+
+  

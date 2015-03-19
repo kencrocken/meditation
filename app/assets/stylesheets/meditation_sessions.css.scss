@@ -6,7 +6,34 @@
   font-size: 4em;
   font-weight: 100;
   text-align: center;
-  margin-top: 4em;
+  margin-top: 2em;
+}
+
+#log-in-box, #sign-up-box { display: none; }
+.registration-box {
+  @include span-columns(4);
+  @include shift(4);
+  h2 {
+    text-align: center;
+  }
+}
+nav {
+  @include outer-container();
+  h3 { 
+    @include span-columns(4); 
+    font-size: 2.2em;
+    font-weight: 100;
+  }
+  ul.header-nav {
+    @include span-columns(8);
+    list-style: none;
+    margin: 0;
+    text-align: right;
+    li {
+      display: inline-block;
+      margin: 0 0.2em;
+    }
+  } 
 }
 
 ul.hmenu {
@@ -19,9 +46,14 @@ ul.hmenu {
     margin: 0 0.2em;
   }
 }
-    
+
+main { @include outer-container(); }  
+
 table {
     margin-bottom: 2em;
+    td {
+      i { padding-right: 15px; }
+    }
 }
 
 .meditation-duration { 
