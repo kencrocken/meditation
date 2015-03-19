@@ -2,25 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.app-title {
+  font-size: 4em;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 4em;
+}
+
 ul.hmenu {
   list-style: none; 
   margin: 0 0 2em;
   padding: 0;
+  text-align: center;
   li {
-    display: inline; 
+    display: inline-block; 
+    margin: 0 0.2em;
   }
 }
     
 table {
     margin-bottom: 2em;
-}
-
-input[type=radio] {
-  display: none;
-  &:checked + .meditation-duration {
-    background-color: red;
-    color: white;
-  }
 }
 
 .meditation-duration { 

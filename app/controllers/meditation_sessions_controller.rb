@@ -48,7 +48,7 @@ class MeditationSessionsController < ApplicationController
     private
 
     def session_params
-      params.require(:meditation_session).permit(:time_spent)
+      params.require(:meditation_session).permit(:time_spent, :comment)
     end
 
     def set_session
