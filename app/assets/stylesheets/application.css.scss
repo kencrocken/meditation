@@ -13,6 +13,7 @@
  *= require_self
  */
 @import "bourbon";
+@import "base/grid-settings";
 @import "neat";
 @import "base/base";
 @import "font-awesome-sprockets";
@@ -35,8 +36,16 @@ main { @include outer-container(); }
 
 #log-in-box, #sign-up-box { display: none; }
 .registration-box {
-  @include span-columns(4);
-  @include shift(4);
+  @include span-columns(10);
+  @include shift(1);
+  @include media($medium-screen-up) {
+    @include span-columns(6);
+    @include shift(3);
+  }
+  @include media($large-screen-up) {
+    @include span-columns(4);
+    @include shift(4);
+  }
   h2 {
     text-align: center;
   }
