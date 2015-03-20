@@ -24,20 +24,62 @@ body {
     font-weight: 200;
 }
 
+main { @include outer-container(); }  
+
+.app-title {
+  font-size: 4em;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 2em;
+}
+
+#log-in-box, #sign-up-box { display: none; }
+.registration-box {
+  @include span-columns(4);
+  @include shift(4);
+  h2 {
+    text-align: center;
+  }
+}
+
+nav {
+  @include outer-container();
+  margin-bottom: 1em;
+  h3 { 
+    @include span-columns(4); 
+    font-size: 2.2em;
+    font-weight: 100;
+  }
+  ul.header-nav {
+    @include span-columns(8);
+    list-style: none;
+    margin: 0;
+    text-align: right;
+    li {
+      display: inline-block;
+      margin: 0 0.2em;
+    }
+  } 
+}
+
+ul.hmenu {
+  list-style: none; 
+  margin: 0 0 2em;
+  padding: 0;
+  text-align: center;
+  li {
+    display: inline-block; 
+    margin: 0 0.2em;
+  }
+}
+
+
 // Flash Styles
 $base-spacing: 1.5em !default;
 $alert-color: #fff6bf !default;
 $error-color: #fbe3e4 !default;
 $notice-color: #e5edf8 !default;
 $success-color: #e6efc2 !default;
-
-.close {
-    color: black;
-    font-size: em(21);
-    &:hover {
-        color: red;
-    }
-}
 
 @mixin flash($color) {
   background-color: $color;

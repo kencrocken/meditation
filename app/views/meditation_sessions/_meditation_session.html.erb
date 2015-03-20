@@ -2,7 +2,7 @@
     <td class="session_date"><%= meditation_session.created_at.strftime("%b %d, %Y") %></td>
     <td class="session_duration"><%= meditation_session.time_spent %></td>
     <td class="session_comment"><%= meditation_session.comment %></td>
-    <td align="right"><%= link_to icon('eye', '', class: 'close'), meditation_session_path(meditation_session.id) %>
+    <td align="right"><%= link_to icon('eye', '', class: 'view'), meditation_session_path(meditation_session.id) %>
        <%= link_to icon('times-circle-o', '', class: 'close'), meditation_session,  method: :delete, data: { confirm: "You sure?" } %>
     </td>
 </tr>

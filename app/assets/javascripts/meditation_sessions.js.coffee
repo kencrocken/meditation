@@ -26,8 +26,8 @@ element.innerHTML = '<header id="minutes"></header>'
 textElement = document.getElementById('minutes')
 meditationDuration = new (ProgressBar.Circle)(element,
     duration: 200
-    strokeWidth: 3
-    trailWidth: 1
+    strokeWidth: 2
+    trailWidth: 0.5
     color: '#FCB03C'
     trailColor: '#ddd')
 $('#start').click ->

@@ -1,5 +1,6 @@
 class MeditationSessionsController < ApplicationController
-    before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy]
+    before_action :set_user, only: [:show, :new, :edit, :update, :destroy]
     before_action :set_session, only: [:show, :edit, :update, :destroy]
 
 
@@ -49,6 +50,10 @@ class MeditationSessionsController < ApplicationController
 
     def session_params
       params.require(:meditation_session).permit(:time_spent, :comment)
+    end
+
+    def set_user
+        @user = current_user
     end
 
     def set_session

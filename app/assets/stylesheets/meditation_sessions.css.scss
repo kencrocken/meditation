@@ -2,52 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.app-title {
-  font-size: 4em;
-  font-weight: 100;
-  text-align: center;
-  margin-top: 2em;
-}
-
-#log-in-box, #sign-up-box { display: none; }
-.registration-box {
-  @include span-columns(4);
-  @include shift(4);
-  h2 {
-    text-align: center;
-  }
-}
-nav {
-  @include outer-container();
-  h3 { 
-    @include span-columns(4); 
-    font-size: 2.2em;
-    font-weight: 100;
-  }
-  ul.header-nav {
-    @include span-columns(8);
-    list-style: none;
-    margin: 0;
-    text-align: right;
-    li {
-      display: inline-block;
-      margin: 0 0.2em;
-    }
-  } 
-}
-
-ul.hmenu {
-  list-style: none; 
-  margin: 0 0 2em;
-  padding: 0;
-  text-align: center;
-  li {
-    display: inline-block; 
-    margin: 0 0.2em;
-  }
-}
-
-main { @include outer-container(); }  
 
 table {
     margin-bottom: 2em;
@@ -56,6 +10,21 @@ table {
     }
 }
 
+.view {
+  color: $medium-gray;
+  font-size: em(21);
+  &:hover {
+    color: $blue;
+  }
+}
+
+.close {
+    color: $medium-gray;
+    font-size: em(21);
+    &:hover {
+        color: red;
+    }
+}
 .meditation-duration { 
     cursor: pointer; 
     height: 150px;
@@ -68,16 +37,15 @@ table {
     margin: 0 5px;
     transition: all 0.2s ease;
     &:hover {
-       background-color: cornflowerblue; 
+       background-color: #7B1113; 
        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.85);
        color: white;
     }
 }
 
 #duration{
-    margin: 25px 12px;
-    height: 200px;
-    width: 200px;
+    @include span-columns(4);
+    @include shift(4);
     position: relative;
 
     #minutes {
@@ -91,4 +59,11 @@ table {
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+}
+
+.controls {
+    @include span-columns(12);
+    display: inline-block;
+    text-align: center;
+    margin: 1em 0;
 }

@@ -1,0 +1,23 @@
+<% unless success.nil? %>
+    <div class="flash-success">
+      <span><%= success %></span>
+    </div>
+<% end %>
+
+<% unless error.nil? %>
+    <div class="flash-error">
+      <span><%= error %></span>
+    </div>
+<% end %>
+
+<% unless notice.nil? %>
+    <div class="flash-notice">
+      <span><%= notice %></span>
+    </div>
+<% end %>
+
+<% unless alert.nil? %>
+    <div class="flash-alert">
+      <span><%= alert %></span>
+    </div>
+<% end %>

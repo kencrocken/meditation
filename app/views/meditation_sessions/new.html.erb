@@ -1,12 +1,11 @@
 <div id = "new-session">
-    <%= link_to "Home", root_path, data: { confirm: "This will delete your current session. Are you sure?" } %>
     <h4 id="date" class="session_date"><%= Time.now.to_formatted_s(:concise) %></h4>
-    <div id="duration" class="session_duration">0</div>
+    <div id="duration" class="session_duration"></div>
 </div>
-
-<input id="pause" type="button" value="pause"/>
-<input id="start" type="button" value="start"/>
-
+<div class="controls">
+    <input id="pause" type="button" value="pause"/>
+    <input id="start" type="button" value="start"/>
+</div>
 <div id="complete" style="display: none;">
     <%= render "meditation_complete" %>
 </div>

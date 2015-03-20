@@ -14,9 +14,6 @@ input[type="button"] {
 	@extend %button;
 	background: transparent;
 	border: 1px solid #aaa;
-	color: black;
-	font-weight: 300;
-	&:active {
-		background: #aaa;
-	}
+	color: $tibetan-red;
+	font-weight: 200;
 }
